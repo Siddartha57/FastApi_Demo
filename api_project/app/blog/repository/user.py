@@ -1,5 +1,5 @@
-from api_project.blog import models
-from api_project.blog import hashing
+from api_project.app.blog import models
+from api_project.app.blog import hashing
 from fastapi import HTTPException,status
 
 Hash = hashing.Hash
@@ -29,3 +29,4 @@ def delete(db,id):
     db.commit()
 
     return {'details':f'user with id: {id} deleted sucessfully'}
+
