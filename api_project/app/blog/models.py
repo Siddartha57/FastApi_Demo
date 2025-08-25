@@ -1,5 +1,5 @@
 from sqlalchemy import Column,Integer,String, ForeignKey
-from api_project.blog.database import Base
+from api_project.app.blog.database import Base
 from sqlalchemy.orm import relationship
 
 class Blog(Base):
@@ -20,3 +20,4 @@ class User(Base):
 
 
     blogs = relationship("Blog",back_populates="creator")
+
