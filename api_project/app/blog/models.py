@@ -1,5 +1,5 @@
 from sqlalchemy import Column,Integer,String, ForeignKey
-from blog.database import Base
+from api_project.blog.database import Base
 from sqlalchemy.orm import relationship
 
 class Blog(Base):
@@ -17,5 +17,6 @@ class User(Base):
     name = Column(String)
     email = Column(String)
     password = Column(String)
+
 
     blogs = relationship("Blog",back_populates="creator")
