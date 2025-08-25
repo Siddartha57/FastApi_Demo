@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from api_project.blog import models
+from api_project.app.blog import models
 from fastapi import HTTPException,status
 
 def get_all(db: Session):
@@ -35,3 +35,4 @@ def delete(db,id):
     db.commit()
 
     return {'details':f'Blog with {id} deleted sucessfully'}
+
