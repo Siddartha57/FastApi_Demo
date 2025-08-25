@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from blog import models
+from api_project.blog import models
 from fastapi import HTTPException,status
 
 def get_all(db: Session):
@@ -33,4 +33,5 @@ def delete(db,id):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
     blog.delete(synchronize_session=False)
     db.commit()
+
     return {'details':f'Blog with {id} deleted sucessfully'}
