@@ -1,7 +1,7 @@
 from fastapi import APIRouter,Depends, HTTPException,status
 from sqlalchemy.orm import Session
-from api_project.blog import database, schemas,models, token
-from api_project.blog.hashing import Hash
+from api_project.app.blog import database, schemas,models, token
+from api_project.app.blog.hashing import Hash
 from typing import Annotated
 from fastapi.security import OAuth2PasswordRequestForm
 
@@ -23,3 +23,4 @@ def login(request:OAuth2PasswordRequestForm = Depends(),db:Session = Depends(dat
     )
 
     return {"access_token": access_token, "token_type": "bearer"}
+
