@@ -1,8 +1,8 @@
 from fastapi import APIRouter,Depends,status
-from blog import schemas, database
+from api_project.blog import schemas, database
 from sqlalchemy.orm import Session
 from typing import List
-from blog.repository import user
+from api_project.blog.repository import user
 
 router = APIRouter(
     tags=['User'],
@@ -25,4 +25,5 @@ def get_user(id: int, db:Session=Depends(get_db)):
 
 @router.delete('/{id}', status_code=status.HTTP_204_NO_CONTENT)
 def delete_user(id: int, db:Session=Depends(get_db)):
+
     return user.delete(db,id)
