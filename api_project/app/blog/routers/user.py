@@ -1,5 +1,5 @@
 from fastapi import APIRouter,Depends,status
-from api_project.blog import schemas, database
+from api_project.app.blog import schemas, database
 from sqlalchemy.orm import Session
 from typing import List
 from api_project.app.blog.repository import user
@@ -27,4 +27,5 @@ def get_user(id: int, db:Session=Depends(get_db)):
 def delete_user(id: int, db:Session=Depends(get_db)):
 
     return user.delete(db,id)
+
 
